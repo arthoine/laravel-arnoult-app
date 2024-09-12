@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
-class ExampleComponent extends Component
+class Example extends Component
 {
-
     public $message = "Hello, Livewire!";
 
     public function changeMessage()
@@ -16,7 +15,7 @@ class ExampleComponent extends Component
 
     public function render()
     {
-        return view('livewire.example-component', [
+        return view('livewire.example', [
             'message' => $this->message
         ]);
     }

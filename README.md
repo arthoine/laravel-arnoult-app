@@ -78,6 +78,11 @@ docker-compose up --build -d
 
 docker-compose up -d
 
+docker-compose exec app php artisan migrate
+
+docker-compose exec node npm install
+
+docker-compose exec node npm run dev
 
 http://localhost:8080/
 
