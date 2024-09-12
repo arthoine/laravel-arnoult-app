@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Laravel Livewire App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livewire Test</title>
     @livewireStyles
 </head>
 <body>
-@livewire('your-component-name')
+
+@livewire('example-component')
 
 @livewireScripts
 </body>
