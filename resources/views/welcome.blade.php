@@ -7,8 +7,9 @@
     @livewireStyles
 </head>
 <body>
-
-@livewire('example-component')
+<div>test</div>
+<div>test</div>
+@livewire('example')
 
 @livewireScripts
 </body>
