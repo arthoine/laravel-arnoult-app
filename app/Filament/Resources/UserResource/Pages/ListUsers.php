@@ -14,7 +14,7 @@ class ListUsers extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        if (Auth::user() && Auth::user()->hasRole('administrateur')) {
+        if (Auth::user() && Auth::user()->isAdministrator()) {
             return [
                 Actions\CreateAction::make(),
             ];

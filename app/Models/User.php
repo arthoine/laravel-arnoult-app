@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
- * 
+ *
  *
  * @property int $id
  * @property string $name
@@ -80,4 +80,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Vérifie si l'utilisateur a le rôle d'admin
+     *
+     * @return bool
+     */
+    public function isAdmin(): bool
+    {
+        return $this->hasRole('admin');
+    }
+
+    /**
+     * Vérifie si l'utilisateur a le rôle d'administrateur.
+     *
+     * @return bool
+     */
+    public function isAdministrator(): bool
+    {
+        return $this->hasRole('administrateur');
+    }
 }

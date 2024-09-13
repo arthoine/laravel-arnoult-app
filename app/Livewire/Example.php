@@ -17,8 +17,12 @@ class Example extends Component
     public function render()
     {
         $user = User::find(1);
+        $user->assignRole('admin');
         $user->assignRole('administrateur');
-        dd($user->hasRole('administrateur'));
+        dump('isAdmin');
+        dump($user->isAdmin());
+        dump('isAdministrator');
+        dd($user->isAdministrator());
         return view('livewire.example', [
             'message' => $this->message
         ]);
