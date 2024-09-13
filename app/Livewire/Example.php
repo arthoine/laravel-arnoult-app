@@ -19,9 +19,9 @@ class Example extends Component
         $user = User::find(1);
         $user->assignRole('admin');
         $user->assignRole('administrateur');
-        dump('isAdmin');
+        dump('isAdmin :');
         dump($user->isAdmin());
-        dump('isAdministrator');
+        dump('isAdministrator :');
         dd($user->isAdministrator());
         return view('livewire.example', [
             'message' => $this->message
