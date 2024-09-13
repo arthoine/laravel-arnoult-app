@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class Example extends Component
 {
-    public $message = "Hello, Livewire!";
+    public $message = 'Hello, Livewire!';
 
     public function changeMessage()
     {
-        $this->message = "The message has changed!";
+        $this->message = 'The message has changed!';
     }
 
     public function render()
@@ -23,8 +23,9 @@ class Example extends Component
         dump($user->isAdmin());
         dump('isAdministrator :');
         dd($user->isAdministrator());
+
         return view('livewire.example', [
-            'message' => $this->message
+            'message' => $this->message,
         ]);
     }
 }
