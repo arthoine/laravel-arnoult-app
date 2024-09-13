@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Example extends Component
@@ -15,6 +16,9 @@ class Example extends Component
 
     public function render()
     {
+        $user = User::find(1);
+        $user->assignRole('administrateur');
+        dd($user->hasRole('administrateur'));
         return view('livewire.example', [
             'message' => $this->message
         ]);
