@@ -10,6 +10,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 
 class UserResource extends Resource
@@ -32,8 +33,8 @@ class UserResource extends Resource
                 Select::make('roles')
                     ->multiple()
                     ->relationship('roles', 'name')
-                    ->options(Role::all()->pluck('name', 'id')),
-
+                    ->options(Role::all()->pluck('name', 'id'))
+                    ->visible(fn () => Auth::user() && Auth::user()->isAdministrator()),
             ]);
     }
 
